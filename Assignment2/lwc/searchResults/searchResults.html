@@ -1,0 +1,30 @@
+<template>
+    <div class="slds-m-around_medium slds-p-around_medium slds-size_3-of-3">
+        <lightning-layout multiple-rows="true">
+
+            <template for:each={AccountList} for:item="acc">
+                <lightning-layout-item key={acc.Id} padding="around-small" size="4">
+                    <c-card-component acc-record={acc}></c-card-component>
+                </lightning-layout-item>
+            </template>
+
+            <lightning-layout-item size="12" class="spins" >
+                <template if:true={showLoading}>
+                <div style="background-color: white;height:50px">
+                    <lightning-spinner alternative-text="Loading..." variant="brand" >
+                    </lightning-spinner>
+                </div>
+                </template>
+                <template if:true={message}>
+                    <div style="background-color: white;height:50px">
+                        <lightning:card>
+                            <strong class="slds-p-around_small">
+                                <center>{message}</center>
+                            </strong>
+                        </lightning:card>
+                    </div>
+                </template>
+             </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

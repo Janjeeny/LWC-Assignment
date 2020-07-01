@@ -1,0 +1,28 @@
+<template>
+
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="standard:person_account" size="medium"></lightning-icon>
+            <strong class="slds-p-left_small">{accRecord.Name}</strong>
+        </h3>
+        <lightning-button label="Detail" slot="actions" onclick={displayRecord}></lightning-button>
+        <div class="slds-p-around_small">
+            <table >
+                <tr>
+                    <td><strong>Phone :</strong> </td>
+                    <td>{accRecord.Phone}</td>
+                </tr>
+                <tr>
+                    <td><strong>Industry: </strong></td>
+                    <td>{accRecord.Industry}</td>
+                </tr>
+                <tr>
+                    <td><strong>Type :</strong></td>
+                    <td>{accRecord.Type}</td>
+                </tr>
+
+            </table>
+        </div>
+    </lightning-card>
+
+</template>

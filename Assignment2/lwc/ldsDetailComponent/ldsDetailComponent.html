@@ -1,0 +1,37 @@
+<template>
+    Phone=== {phone}
+   <lightning-input label="Phone1"  value={phone}></lightning-input>
+    <lightning-card title="Account Form" icon-name="standard:record">
+        <div class="slds-m-around_medium">
+            <template if:true={account} >
+            
+            <lightning-input label="Name" disabled={isViewMode} value={account.fields.Name.value} data-field='Name'>
+            </lightning-input>
+            <lightning-input label="Phone" disabled={isViewMode} value={phone}
+                data-field='Phone'></lightning-input>
+            <center>
+                <template if:true={isViewMode} >
+                    <lightning-button label="Edit" variant="brand" onclick={updateAccount}></lightning-button>
+                </template>
+                <template if:false={isViewMode}>
+                    <lightning-button label="Save" variant="brand" onclick={saveAccount} class="slds-m-left_x-small">
+                    </lightning-button>
+                    <lightning-button label="Cancel" variant="brand" onclick={cancelAccount}
+                        class="slds-m-left_x-small"> </lightning-button>
+                </template>
+            </center>
+        
+</template>
+<template if:true={showLoading}>
+    <center>
+   
+    <lightning-spinner alternative-text="Loading..." variant="brand" >
+        </lightning-spinner>
+    </center>
+
+</template>
+
+</div>
+</lightning-card>
+
+</template>
